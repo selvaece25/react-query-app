@@ -1,0 +1,35 @@
+{
+  "name": "advanced-data-fetching-in-react-with-react-query",
+  "version": "1.0.0",
+  "description": "Use react-query with Suspense to fetch data from an API in react.",
+  "keywords": [
+    "react",
+    "suspense",
+    "react-query"
+  ],
+  "main": "src/index.js",
+  "dependencies": {
+    "axios": "0.19.2",
+    "bootstrap": "4.6.0",
+    "react": "experimental",
+    "react-dom": "experimental",
+    "react-query": "1.2.3",
+    "react-router-dom": "5.0.1",
+    "react-scripts": "3.4.1"
+  },
+  "devDependencies": {
+    "typescript": "3.3.3"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
