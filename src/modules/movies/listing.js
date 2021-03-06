@@ -1,30 +1,47 @@
-import React, { useState, lazy } from "react";
-import { getMoviesList, getPokemonList } from "../../queries";
+import React, { useEffect, lazy } from 'react';
+import { useAuthors } from '../../queries';
 
-import { useQuery } from "react-query";
+import { useSelector, useDispatch } from 'react-redux';
 
-const MovieList = lazy(() => import("../../components/movie-card"));
-const AddFavourites = lazy(() => import("../../components/add-favourite"));
+import { ACTIONS } from '../../redux';
+
+const MovieList = lazy(() => import('../../components/movie-card'));
 
 const MovieListingView = () => {
-  const { data, refetch, error } = useQuery("Movies", getMoviesList, {});
-  // Short circut if there is an error state and return.
+  const { status, data, error, isFetching, isLoading, refetch } = useAuthors();
+
+  const authors = useSelector((state) => state.authors);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (!isFetching && data && data.data) {
+      dispatch({
+        type: ACTIONS.SET_ALL_AUTHORS,
+        payload: {
+          authors: data.data,
+        },
+      });
+    }
+  }, [data, isFetching]); // eslint-disable-line react-hooks/exhaustive-deps
+
   if (error) {
     return <div>There was an Error {error}</div>;
   }
-  // If there is no data do return nothing
   if (!data) {
-    return <button onClick={() => refetch()}>Fetch Pokemon</button>;
+    return <div onClick={() => refetch()}>Loading....</div>;
   }
   return (
     <div>
-      {data.data.map((userDetails) => (
-        <MovieList key={userDetails.firstName} user={userDetails} />
+      {authors.map((userDetails) => (
+        <MovieList
+          key={`${userDetails.firstName}-${userDetails.lastName}`}
+          user={userDetails}
+        />
       ))}
     </div>
   );
 };
 
-MovieListingView.displayName = "MovieListingView";
+MovieListingView.displayName = 'MovieListingView';
 
 export default MovieListingView;

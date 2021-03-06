@@ -1,21 +1,50 @@
 import axios from "axios";
+import { useQuery } from 'react-query';
 
-axios.defaults.headers["app-id"] = "604256dfcf5773974e6beb34";
+axios.defaults.headers["app-id"] = "lTE5abbDxdjGplutvTuc";
 
-const getPokemonList = async () => {
-  const { data } = await axios.get("https://pokeapi.co/api/v2/pokemon");
-  return data;
-};
 
-const getMoviesList = async () => {
-  const url = `https://dummyapi.io/data/api/user?limit=10`;
+const getAuthors = async () => {
+  const url = `https://dummyapi.io/data/api/user?limit=30`;
   const { data } = await axios.get(url);
+  return data || [];
+};
+
+export function useAuthors() {
+  return useQuery("authors", getAuthors);
+}
+
+
+const getAuthorPosts = async (userId) => {
+  const { data } = await axios.get(
+    `https://dummyapi.io/data/api/user/${userId}/post?limit=10`
+  );
   return data;
 };
 
-const getPokemonDetail = async (key, { id }) => {
-  const { data } = await axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`);
+export function useAuthorPosts(userId) {
+  return useQuery(["post", userId], () => getAuthorPosts(userId));
+}
+
+
+const getUserDetail = async (userId) => {
+  const { data } = await axios.get(
+    `https://dummyapi.io/data/api/user/${userId}/`
+  );
   return data;
 };
 
-export { getPokemonDetail, getPokemonList, getMoviesList };
+export function useUserDetail(userId) {
+  return useQuery(["user", userId], () => getUserDetail(userId));
+}
+
+
+const getPosts = async () => {
+  const url = `https://dummyapi.io/data/api/post?limit=30`;
+  const { data } = await axios.get(url);
+  return data || [];
+};
+
+export function usePosts() {
+  return useQuery("posts", getPosts);
+}

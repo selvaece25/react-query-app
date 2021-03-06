@@ -13,7 +13,8 @@ body {
   transition: transform 0.2s;
   float: left;
   background-color: #fff;
-  margin: 20px;
+  margin: 25px;
+  color: #440a67;
 }
 
 .image-container:hover {
@@ -39,7 +40,7 @@ body {
 
 .filter-header {
   color: #212529;
-  background-color: #f8f9fa;
+  color: #f8f9fa;
   border-color: #f8f9fa;
   border-radius: 0.3rem;
   padding: 0.625rem 1.5625rem 0.5625rem;
@@ -60,4 +61,82 @@ body {
 }
 .bg-white {
   background-color: #fff !important;
+}
+.left {
+  float: left;
+}
+.right {
+  float:right;
+}
+
+
+.badge {
+  display: inline-block;
+  padding: .25em .4em;
+  font-size: 75%;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: .25rem;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.badge-pink {
+  color: #fff;
+  background-color: #ed2c6c!important;
+}
+
+.out-a {
+  color: #ae4ba8;
+}
+
+.whte-space{
+  white-space: nowrap;
+}
+.pb-2, .py-2 {
+  padding-bottom: .5rem!important;
+}
+.mb-2, .my-2 {
+  margin-bottom: .5rem!important;
+}
+.align-items-center {
+  -ms-flex-align: center!important;
+  align-items: center!important;
+}
+.d-flex {
+  display: -ms-flexbox!important;
+  display: flex!important;
+}
+.border-bottom {
+  border-bottom: 1px solid #dee2e6!important;
+}
+
+.rounded-circle {
+  border-radius: 50%!important;
+}
+.box-32px {
+  width: 32px;
+  height: 32px;
+}
+img {
+  vertical-align: middle;
+  border-style: none;
+}
+
+
+p-2 {
+  padding: .5rem!important;
+}
+.w-100 {
+  width: 330px!important;
+}
+.d-inline-block {
+  display: inline-block!important;
+}
+
+
+img {
+    vertical-align: middle;
+    border-style: none;
 }
