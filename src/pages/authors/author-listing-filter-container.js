@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 
 import useFilterHook from '../../hooks/useFilterHooks';
 import { authorsFiltering } from './author-slice';
+import { useTranslation } from "react-i18next";
 
 
 const filterTypes = [
@@ -18,7 +19,7 @@ const filterTypes = [
     optional: false,
     queryParamKey: 'title',
     placeholder: null,
-    title: 'Title',
+    title: 'title',
   },
   {
     type: 'Text',
@@ -28,7 +29,7 @@ const filterTypes = [
     optional: false,
     queryParamKey: 'firstName',
     placeholder: 'Search by FirstName',
-    title: 'First Name',
+    title: 'first_name',
   },
   {
     type: 'Text',
@@ -38,7 +39,7 @@ const filterTypes = [
     optional: false,
     queryParamKey: 'lastName',
     placeholder: 'Search by LastName',
-    title: 'Last Name',
+    title: 'last_name',
   },
   {
     type: 'Text',
@@ -56,6 +57,7 @@ const filterTypes = [
 
 const Filter = () => {
   const dispatch = useDispatch();
+  const { t: translation  } = useTranslation();
 
   const filtering = () => {
     dispatch(authorsFiltering({ search_keys: inputs }));
@@ -64,13 +66,13 @@ const Filter = () => {
   const {inputs, handleInputChange, handleSubmit} = useFilterHook({ }, filtering);
   return (
     <div>
-      <h4> Filters </h4>
+      <h4> {translation('filters')} </h4>
       <form onSubmit={handleSubmit} autoComplete="off">
       {filterTypes.map((filter) => (
         <article className='card-group-item' key={`${filter.title}`}>
           <header className='card-header'>
             <h6 className='border-bottom border-3'>
-              {filter.title}
+              {translation(filter.title)}
             </h6>
           </header>
             <div className='card-body'>
@@ -100,7 +102,7 @@ const Filter = () => {
       ))}
       <br />
       <button type='submit' className='btn btn-primary left'>
-        Apply
+        { translation('apply')}
       </button>
       </form>
     </div>

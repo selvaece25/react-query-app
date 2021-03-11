@@ -3,10 +3,8 @@ import { setToLocalStorage, getFromLocalStorage } from '../utils/storage';
 import _ from 'lodash';
 
 export const useTheme = () => {
-    const themesFromStore = getFromLocalStorage('all-themes');
-
-    const localTheme = getFromLocalStorage('theme');
-    const [theme, setTheme] = useState(localTheme || themesFromStore.data.light);
+    const themes = getFromLocalStorage('all-themes');
+    const [theme, setTheme] = useState(getFromLocalStorage('theme') || themes.data.light);
     const [themeLoaded, setThemeLoaded] = useState(false);
 
     const setMode = mode => {
@@ -14,15 +12,11 @@ export const useTheme = () => {
         setTheme(mode);
     };
 
-    const getFonts = () => {
-        const allFonts = _.values(_.mapValues(themesFromStore.data, 'font'));
-        return allFonts;
-    }
-
     useEffect(() => {
-        localTheme ? setTheme(localTheme) : setTheme(themesFromStore.data.light);
+        const localTheme = getFromLocalStorage('theme');
+        localTheme ? setTheme(localTheme) : setTheme(themes.data.light);
         setThemeLoaded(true);
-    }, [localTheme, themesFromStore.data.light]);
+    }, []);
     
-    return { theme, themeLoaded, setMode, getFonts, themesFromStore };
+    return { theme, themeLoaded, setMode, themes };
 };

@@ -1,7 +1,19 @@
 {
-    "welcome": "Welcome",
-    "appAbout": "In this app you can check basic data of all      countries in the world.",
-    "explore": "Feel free to explore!",
+    "app_title": "A to Z Fun",
     "viewAllPosts": "View All Posts",
-    "viewFullProfile": "View Full Profile"
+    "viewFullProfile": "View Full Profile",
+    "filters":"Filters",
+    "title":"Title",
+    "first_name":"First Name",
+    "last_name":"Last Name",
+    "email":"Email",
+    "apply":"Apply",
+    "view_post":"View Owner Profile",
+    "likes":"Likes",
+    "your_password":"Your Password *",
+    "password_required":"Password field is required",
+    "email_required":"Email-id field is required",
+    "login":"Login",
+    "checking_up":"Checking up"
+
 }

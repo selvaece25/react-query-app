@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { useTranslation } from "react-i18next";
 
+
 const truncate = (text) => {
   return text.length > 18 ? text.substring(0, 13) + '...' : text;
 };
@@ -50,7 +51,7 @@ const CardLink = styled.div`
 
 const AuthorListView = memo(({ user }) => {
   const { picture, firstName, lastName, id } = user;
-  const { t: translation } = useTranslation();
+  const { t: translation  } = useTranslation();
   return (
     <CardContainer>
       <CardCoverImage src={picture} ></CardCoverImage>

@@ -1,7 +1,18 @@
 {
-    "welcome": "Willkommen",
-    "appAbout": "In diesem App können Sie Grunddata der Länder   ansehen.",
-    "explore": "Fühlen Sie sich frei zu erkunden!",
+    "app_title": "A to Z Spaß",
     "viewAllPosts": "Alle Beiträge anzeigen",
-    "viewFullProfile": "Vollständiges Profil anzeigen"
+    "viewFullProfile": "Vollständiges Profil anzeigen",
+    "filters":"Filter",
+    "title":"Titel",
+    "first_name":"Vorname",
+    "last_name":"Nachname",
+    "email":"Email",
+    "apply":"Anwenden",
+    "view_post":"Beitrag anzeigen",
+    "likes":"Likes",
+    "your_password":"Ihr Passwort",
+    "password_required":"Passwortfeld ist erforderlich",
+    "email_required":"Das Feld E-Mail-ID ist erforderlich",
+    "login":"Anmeldung",
+    "checking_up":"Überprüfen"
 }

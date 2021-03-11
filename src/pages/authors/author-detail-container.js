@@ -13,7 +13,7 @@ const AuthorProfileDetail = ({ match: { params } }) => {
     }
     return (
       <div>
-        <img src={user.picture} className="w-100 mw-240px mb-3" alt={user.firstName} />
+        <img src={user.picture} className="mw-240px mb-3" width="250" alt={user.firstName} />
         <div className="col-12 col-md-4">
             <div className="h5 whte-space">{user.firstName}</div>
             <div className="whte-space"><b>Gender: </b>{user.gender}</div>
