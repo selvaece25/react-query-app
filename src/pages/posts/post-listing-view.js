@@ -9,7 +9,7 @@ const truncate = (text) => {
 
 
 const PostListView = memo(({ post }) => {
-  const { image, text, id, tags, likes, publishDate, owner } = post;
+  const { image, text, tags, likes, publishDate, owner } = post;
   const { t: translation  } = useTranslation();
 
   return (

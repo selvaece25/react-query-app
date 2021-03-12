@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { routes } from '../routes';
 import useSwitchLanguage from '../hooks/useLanguageSwitch';
 
-const ToggleButton = lazy(() => import('../components/toggle-button'));
+const ToggleButton = lazy(() => import('./toggle-button'));
 
 const Menu = () => {
   return (

@@ -15,8 +15,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 import './i18n';
 
-import Heading from './layouts/app-header';
-import NavBar from './layouts/app-nav-bar';
+import Heading from './components/app-header';
+import NavBar from './components/app-nav-bar';
 
 const Loader = () => <div>Loading</div>;
 
@@ -41,11 +41,10 @@ function App() {
       <Suspense fallback={<Loader />}>
         {themeLoaded && (
           <ThemeProvider theme={selectedTheme}>
-            <GlobalStyles />
             <Router className='App'>
               <div className='container-fluid'>
                 <div className='row d-flex align-items-center mt-4 mb-4'>
-                  <Heading title='A to Z Fun' />
+                  <Heading title='SK Fun' />
                   <NavBar
                     themes={_.keys(themes.data)}
                     data={themes.data}
@@ -71,6 +70,7 @@ function App() {
                 </Switch>
               </div>
             </Router>
+            <GlobalStyles />
           </ThemeProvider>
         )}
       </Suspense>

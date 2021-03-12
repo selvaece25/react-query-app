@@ -5,6 +5,7 @@
             "name": "Light",
             "colors": {
                 "body": "#FFFFFF",
+                "sidebar": "#6af55b",
                 "text": "#000000",
                 "button": {
                     "text": "#FFFFFF",
@@ -22,6 +23,7 @@
             "name": "Dark",
             "colors": {
                 "body": "#000000",
+                "sidebar": "#FFFFFF",
                 "text": "#FFFFFF",
                 "button": {
                     "text": "#000000",
@@ -39,6 +41,7 @@
             "name": "Material",
             "colors": {
                 "body": "#6a1b9a",
+                "sidebar": "#FFFFFF",
                 "text": "#ebdbf5",
                 "button": {
                     "text": "#6a1b9a",
@@ -56,6 +59,7 @@
             "name": "Sharp",
             "colors": {
                 "body": "#ffeb3b",
+                "sidebar": "#db5bf5",
                 "text": "#292500",
                 "button": {
                     "text": "#FFFFFF",
@@ -73,6 +77,7 @@
             "name": "Calm",
             "colors": {
                 "body": "#80cbc4",
+                "sidebar": "#e8a51e",
                 "text": "#002b24",
                 "button": {
                     "text": "#FFFFFF",
@@ -90,6 +95,7 @@
             "name": "Cherry Bon Bon",
             "colors": {
                 "body": "#c62828",
+                "sidebar": "#FFFFFF",
                 "text": "#ffeeed",
                 "button": {
                     "text": "#c62828",
@@ -107,6 +113,7 @@
             "name": "Sea Wave",
             "colors": {
                 "body": "#9be7ff",
+                "sidebar": "#caf567",
                 "text": "#0d47a1",
                 "button": {
                     "text": "#ffffff",

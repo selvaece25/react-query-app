@@ -57,13 +57,14 @@ const filterTypes = [
 
 const Filter = () => {
   const dispatch = useDispatch();
-  const { t: translation  } = useTranslation();
-
   const filtering = () => {
     dispatch(authorsFiltering({ search_keys: inputs }));
   }
-
   const {inputs, handleInputChange, handleSubmit} = useFilterHook({ }, filtering);
+  const { t: translation  } = useTranslation();
+
+
+
   return (
     <div>
       <h4> {translation('filters')} </h4>

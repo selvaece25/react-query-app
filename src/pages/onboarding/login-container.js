@@ -25,7 +25,7 @@ const Login = () => {
     return () => {
       dispatch(clearState());
     };
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     if (isError) {
@@ -38,7 +38,7 @@ const Login = () => {
       history.push('/');
       window.location.reload();
     }
-  }, [isError, isSuccess]);
+  }, [isError, isSuccess, dispatch, errorMessage, history]);
 
   const loginStatus = isFetching ? ( <p>{ translation('checking_up') } ... </p>) : (<button type="submit" className="btnSubmit">{ translation('login') }</button>);
 

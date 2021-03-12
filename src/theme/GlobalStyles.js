@@ -2,7 +2,7 @@ import { createGlobalStyle} from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
   body {
-    background: ${({ theme }) => theme.colors.body};
+    background: ${({ theme }) => theme.colors.body} !important;
     color: ${({ theme }) => theme.colors.text};
     font-family: ${({ theme }) => theme.font};
     transition: all 0.50s linear;
@@ -34,5 +34,12 @@ export const GlobalStyles = createGlobalStyle`
     background-color: #1064EA;
     color: #FFFFFF;
     font-family: ${({ theme }) => theme.font};
+  }
+  .sidebar {
+    background-color: ${({ theme }) => theme.colors.sidebar};
+    border-radius: 10px;
+    padding: 15px;
+    color:#000;
+    height: 750px;
   }
 `;

@@ -15,7 +15,7 @@ const Dashboard = () => {
   const { isFetching, errorMessage } = useSelector(userSelector);
   useEffect(() => {
     dispatch(fetchUserBytoken({ token: localStorage.getItem('token') }));
-  }, []);
+  }, [dispatch]);
 
   const { username, email } = useSelector(userSelector);
 

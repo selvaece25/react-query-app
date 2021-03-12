@@ -21,11 +21,14 @@ const Signup = () => {
     dispatch(signupUser(data));
   };
 
+  
+
   useEffect(() => {
-    return () => {
+    const initalClearState = () => {
       dispatch(clearState());
     };
-  }, []);
+    initalClearState();
+  }, [dispatch]);
 
   useEffect(() => {
     if (isSuccess) {
@@ -37,7 +40,7 @@ const Signup = () => {
       toast.error(errorMessage);
       dispatch(clearState());
     }
-  }, [isSuccess, isError]);
+  }, [dispatch, isSuccess, errorMessage, isError, history]);
 
   const signUpStatus = isFetching ? (
     <p>Signing up</p>

@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import { setToLocalStorage, getFromLocalStorage } from '../utils/storage';
-import _ from 'lodash';
 
 export const useTheme = () => {
     const themes = getFromLocalStorage('all-themes');
-    const [theme, setTheme] = useState(getFromLocalStorage('theme') || themes.data.light);
+    const defaultTheme =  themes.data.light;
+    const [theme, setTheme] = useState(getFromLocalStorage('theme') || defaultTheme);
     const [themeLoaded, setThemeLoaded] = useState(false);
 
     const setMode = mode => {
@@ -14,9 +14,9 @@ export const useTheme = () => {
 
     useEffect(() => {
         const localTheme = getFromLocalStorage('theme');
-        localTheme ? setTheme(localTheme) : setTheme(themes.data.light);
+        localTheme ? setTheme(localTheme) : setTheme(defaultTheme);
         setThemeLoaded(true);
-    }, []);
+    }, [defaultTheme]);
     
     return { theme, themeLoaded, setMode, themes };
 };
