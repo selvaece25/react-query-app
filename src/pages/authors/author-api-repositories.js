@@ -1,10 +1,10 @@
-import axios from 'axios';
-import toast from 'react-hot-toast';
+import axios from "axios";
+import toast from "react-hot-toast";
 
-import ErrorHandleResponses from '../../api-repositories/error-handler';
-const { REACT_APP_DUMMY_API_ID, REACT_APP_DUMMY_API_ENDPOINT } = process.env;
-axios.defaults.headers['app-id'] = REACT_APP_DUMMY_API_ID;
+import ErrorHandleResponses from "../../api-repositories/error-handler";
+const REACT_APP_DUMMY_API_ENDPOINT = "https://dummyapi.io/data/api/";
 
+axios.defaults.headers["app-id"] = "lTE5abbDxdjGplutvTuc";
 
 export const getAuthors = async () => {
   try {
@@ -22,15 +22,14 @@ export const getAuthors = async () => {
 
 export const getAuthorPosts = async (userId) => {
   const { data } = await axios.get(
-    `${REACT_APP_DUMMY_API_ENDPOINT}user/${userId}/post?limit=10`,
+    `${REACT_APP_DUMMY_API_ENDPOINT}user/${userId}/post?limit=10`
   );
   return data;
 };
 
-
 export const getAuthorDetail = async (userId) => {
-    const { data } = await axios.get(
-      `${REACT_APP_DUMMY_API_ENDPOINT}user/${userId}/`,
-    );
-    return data;
-  };
+  const { data } = await axios.get(
+    `${REACT_APP_DUMMY_API_ENDPOINT}user/${userId}/`
+  );
+  return data;
+};
